@@ -109,11 +109,14 @@ class LinkedList {
         }
     }
 
-
     removeAt(index) {
 
         if (index >= this.length) {
             console.log("Error: Cannot remove nonexistent index.")
+        } else if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+            this.length--;
         } else {
             if (index <= 0) {
                 this.head = this.head.next;
